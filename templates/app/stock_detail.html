@@ -1,25 +1,75 @@
-<div class="row" style="height: 450px;">
-    <div class="col-sm-4 col-md-4" style="height: inherit; overflow-y: scroll;">
-    	<table class="table table-striped table-hover">
-    	    <thead>
-    	      <tr>
-    	        <th>EXEC</th>
-    	        <th>SYMBOL</th>
-    	        <th>PRICE</th>
-    	        <th>CHANGE</th>
-    	      </tr>
-    	    </thead>
-    	    <tbody>
-    	    	<tr ng-repeat="stock in stockFavoriteList">
-    	    		<td>{{stock.exec}}</td>
-    	    		<td>{{stock.symbol}}</td>
-    	    		<td>{{stock.price}}</td>
-    	    		<td>{{stock.change}}</td>
-    	    	</tr>
-    	    </tbody>
-	  	</table>
-    </div>
-    <div class="col-sm-8 col-md-8" style="height: inherit;">
-    	<stock-graph history="stockHistoricData" price="livePrice"></stock-graph>
-    </div>
+<div>
+	<div class="row">
+		<div class="col-sm-12 col-md-12">
+			<div class="row">
+			    <div class="col-sm-4 col-md-4" style="height: inherit; max-height: 400px; overflow-y: overlay;">
+			    	<table class="table table-striped table-hover">
+			    	    <thead>
+			    	      <tr>
+			    	        <th>EXEC</th>
+			    	        <th>SYMBOL</th>
+			    	        <th>PRICE</th>
+			    	        <th>CHANGE</th>
+			    	      </tr>
+			    	    </thead>
+			    	    <tbody>
+			    	    	<tr ng-repeat="stock in stockFavoriteList">
+			    	    		<td>{{stock.exec}}</td>
+			    	    		<td>{{stock.symbol}}</td>
+			    	    		<td>{{stock.price}}</td>
+			    	    		<td>{{stock.change}}</td>
+			    	    	</tr>
+			    	    </tbody>
+				  	</table>
+			    </div>
+			    <div class="col-sm-8 col-md-8" style="height: inherit;">
+			    	<stock-graph history="stockHistoricData" price="livePrice"></stock-graph>
+			    </div>
+		    </div>
+			<div class="row oauto detailTab">
+				<div class="col-sm-12 col-md-12">
+					<div class="row">
+						<div class="col-sm-6 col-md-6 oauto tab">
+							<div class="pull-left"><strong>Day High</strong></div>
+							<div class="pull-right">311.08</div>
+						</div> 
+						<div class="col-sm-6 col-md-6 oauto tab">
+							<div class="pull-left"><strong>Day Low</strong></div>
+							<div class="pull-right">302.89</div>
+						</div> 
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6 oauto tab">
+							<div class="pull-left"><strong>Open</strong></div>
+							<div class="pull-right">311.08</div>
+						</div> 
+						<div class="col-sm-6 col-md-6 oauto tab">
+							<div class="pull-left"><strong>Today's Close</strong></div>
+							<div class="pull-right">302.89</div>
+						</div> 
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6 oauto tab">
+							<div class="pull-left"><strong>Avg. Volume</strong></div>
+							<div class="pull-right">68.08</div>
+						</div> 
+						<div class="col-sm-6 col-md-6 oauto tab">
+							<div class="pull-left"><strong>Volume</strong></div>
+							<div class="pull-right">48.89</div>
+						</div> 
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-6 oauto tab">
+							<div class="pull-left"><strong>52wk High</strong></div>
+							<div class="pull-right">450.08</div>
+						</div> 
+						<div class="col-sm-6 col-md-6 oauto tab">
+							<div class="pull-left"><strong>52wk Low</strong></div>
+							<div class="pull-right">299.89</div>
+						</div> 
+					</div>
+				</div>
+			</div>
+	    </div>
+	</div>
 </div>
