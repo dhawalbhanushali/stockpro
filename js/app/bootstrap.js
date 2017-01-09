@@ -1,9 +1,9 @@
 // Create angular module and inject controller/directives/filters/services modules in it.
 // we can use the init() function to bootstrap our document with app.
 define(
-    ['angular', 'angular-route', 'homeController', 'stockService', 'constants'],
-    function(angular, angularRoute, homeController, stockService, constants) {
-        var app = angular.module('app', ['ngRoute', 'controllersModule', 'servicesModule', 'constantsModule']);
+    ['angular', 'angular-route', 'homeController', 'stockService', 'stockGraph', 'constants'],
+    function(angular, angularRoute, homeController, stockService, stockGraph, constants) {
+        var app = angular.module('app', ['ngRoute', 'controllersModule', 'servicesModule', 'directivesModule', 'constantsModule']);
         
         app.init = function() {
             setTimeout(function() {

@@ -20,6 +20,15 @@ require.config({
         },
         'bootstrap': {
             deps: ['jquery'],
+        },
+        'highstock': {
+        	deps: ['angular']
+        },
+        'highchartsExporting': {
+        	deps: ['highstock']
+        },
+        'lodash': {
+        	deps: ['angular']
         }
     },
     paths: { // ,http://requirejs.org/docs/api.html#pathsfallbacks
@@ -27,12 +36,17 @@ require.config({
         'angular-route': '../../node_modules/angular-route/angular-route.min',
         'jquery': '../../node_modules/jquery/dist/jquery.min',
         'bootstrap': '../../node_modules/bootstrap/dist/js/bootstrap.min',
+        'socket': '../../node_modules/socket.io-client/dist/socket.io.min',
+        'highstock': '../../node_modules/highcharts/highstock',
+        'highchartsExporting': '../../node_modules/highcharts/modules/exporting',
+        'lodash': '../../node_modules/lodash/lodash',
 
         'app': 'bootstrap',
         'constants': 'constants',
 
         'homeController': 'controllers/homeController',
-        'stockService': 'services/stockService'
+        'stockService': 'services/stockService',
+        'stockGraph': 'directives/stockGraph'
     },
     baseUrl: '../js/' + module_id + '/',
     waitSeconds: 0,
