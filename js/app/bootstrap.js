@@ -39,7 +39,7 @@ define(
 
             $routeProvider
                 .when('/', {
-                    templateUrl: '../templates/userLanding.html' // find html template in settings view(index.php)
+                    templateUrl: '../templates/userLanding.html'
                 })
                 .when('/stockList', {
                     templateUrl: '../templates/app/stock_list.html',

@@ -2,9 +2,6 @@
 define(['angular'], function function_name(angular) {
 
     var directives = angular.module('directivesModule', ['servicesModule', 'constantsModule']);
-    /**
-    * Modal Controller
-    */
     
     directives.directive('stockGraph',['urlc', function(urlc) {
         return {
