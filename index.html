@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+	<head>
+		<meta charset="utf-8">
+		<title>Stock Pro</title>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<style>[ng-cloak] { display: none; }</style>
+	</head>
+	<body>
+        <div>
+            <div class="header">
+                This is header of the app
+            </div>
+            <div ng-view>
+                      
+            </div>
+            <div class="footer">
+                This is footer of the app
+            </div>
+        </div>
+		<script data-main="js/main" src="node_modules/requirejs/require.js"></script>
+        <script type="text/javascript">
+            // This module if will be dynamic
+            module_id = 'app';
+        </script>
+	</body>
+</html>
