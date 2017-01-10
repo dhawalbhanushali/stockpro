@@ -2,8 +2,12 @@
 define(['angular', 'constants'], function function_name(angular, constants) {
     var services = angular.module('servicesModule', ['constantsModule']);
     
+
+    // This factory will have alll stock related functions.
+    // Keep on adding functions that you find relevant to this section of code
     services.factory('stock',['$http', 'urlc', function($http, urlc) {
         return {
+            // Will give historical data of stocks with maximum limit of 2500 records
             getHistoricalData: function(params) {
                 return $http({
                     url: urlc.stock.getHistoricalData,
@@ -12,6 +16,7 @@ define(['angular', 'constants'], function function_name(angular, constants) {
                 });
             },
 
+            // Favorite stock list of the current user
             getFavoriteList: function() {
                 return [
                     {

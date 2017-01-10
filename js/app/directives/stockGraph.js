@@ -3,6 +3,8 @@ define(['angular'], function function_name(angular) {
 
     var directives = angular.module('directivesModule', ['servicesModule', 'constantsModule']);
     
+    // This directive can be used to create Graphs and is reusable
+    // Keys seen inside the scope object will change the way your graph looks and behaves
     directives.directive('stockGraph',['urlc', function(urlc) {
         return {
             replace: true,
