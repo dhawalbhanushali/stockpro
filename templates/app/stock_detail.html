@@ -15,36 +15,41 @@
 		    	    	<tr ng-repeat="stock in stockFavoriteList">
 		    	    		<td>{{stock.exec}}</td>
 		    	    		<td>{{stock.symbol}}</td>
-		    	    		<td>{{stock.price}}</td>
+		    	    		<td ng-class="stock.profit ? 'text-success' : 'text-danger'">{{stock.price}}</td>
 		    	    		<td>{{stock.change}}</td>
 		    	    	</tr>
 		    	    </tbody>
 			  	</table>
 		    </div>
 		    <div class="col-sm-8 col-md-8 hei">
-		    	<stock-graph history="stockHistoricData" price="livePrice"></stock-graph>
+		    	<stock-graph history="stockHistoricData" type="area" name="CAKE" graph-id='historyGraph'></stock-graph>
 		    </div>
 	    </div>
-		<div class="row oauto detailTab">
-			<div class="col-sm-12 col-md-12">
+	    <div class="row">
+	    	<div class="col-sm-12 col-md-12">
+	    		<center><button type="submit" class="btn btn-default" ng-click="liveStockFeed()">{{!showLiveFeed ? 'Show Live Feed' : (showLiveFeed && livePrice ? 'Hide Live Feed' : 'Fetching...')}}</button></center>
+	    	</div>
+	    </div>
+		<div class="row detailTab" ng-show="showLiveFeed">
+			<div class="col-sm-5 col-md-5" ng-if="livePrice">
 				<div class="row">
 					<div class="col-sm-6 col-md-6 oauto tab">
 						<div class="pull-left"><strong>Day High</strong></div>
-						<div class="pull-right">311.08</div>
+						<div class="pull-right">{{liveStock.dayHigh || '-'}}</div>
 					</div> 
 					<div class="col-sm-6 col-md-6 oauto tab">
 						<div class="pull-left"><strong>Day Low</strong></div>
-						<div class="pull-right">302.89</div>
+						<div class="pull-right">{{liveStock.dayLow || '-'}}</div>
 					</div> 
 				</div>
 				<div class="row">
 					<div class="col-sm-6 col-md-6 oauto tab">
 						<div class="pull-left"><strong>Open</strong></div>
-						<div class="pull-right">311.08</div>
+						<div class="pull-right">{{liveStock.open || '-'}}</div>
 					</div> 
 					<div class="col-sm-6 col-md-6 oauto tab">
 						<div class="pull-left"><strong>Today's Close</strong></div>
-						<div class="pull-right">302.89</div>
+						<div class="pull-right">{{liveStock.close || '-'}}</div>
 					</div> 
 				</div>
 				<div class="row">
@@ -54,7 +59,7 @@
 					</div> 
 					<div class="col-sm-6 col-md-6 oauto tab">
 						<div class="pull-left"><strong>Volume</strong></div>
-						<div class="pull-right">48.89</div>
+						<div class="pull-right">{{liveStock.volume || '-'}}</div>
 					</div> 
 				</div>
 				<div class="row">
@@ -67,6 +72,9 @@
 						<div class="pull-right">299.89</div>
 					</div> 
 				</div>
+			</div>
+			<div class="col-sm-7 col-md-7 hei" ng-if="livePrice">
+				<stock-graph live-stock="liveStock" price="livePrice" type="line" name="CAKE" graph-id="liveGraph" range-selector="liveRangeSelector"></stock-graph>
 			</div>
 		</div>
     </div>

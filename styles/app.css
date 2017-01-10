@@ -1,5 +1,8 @@
-.oauto {
-	overflow: auto;
+body {
+	font-family: sans-serif;
+	color: #333;
+    font-size: 1.1em;
+    line-height: 1.5;
 }
 
 .stockFavoriteList {
@@ -16,8 +19,4 @@
 .detailTab .tab {
 	border-top: 1px solid #DDD;
 	padding: 5px;
-}
-
-.hei {
-	height: inherit;
 }
